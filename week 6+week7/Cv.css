@@ -1,0 +1,58 @@
+body {
+ margin: 0;
+ padding: 0;
+ background: #ffffff;
+ }
+
+ nav#topmenu ul {
+ list-style: none;
+ background-color: #473f3f;
+ text-align: center;
+ padding: 0;
+ margin: 0;
+ }
+
+ nav#topmenu li {
+ font-size: 22px;
+ line-height: 38px;
+ height: 38px;
+ display: inline-block;
+ padding: 22px;
+ }
+ 
+ nav#topmenu a {
+ text-decoration: none;
+ color: #fff;
+ }
+   h1{
+    color:rgb(50, 104, 162);
+    font-size: 20px;
+    text-transform:none;
+   }
+   .gach-chan{
+text-decoration:underline;
+   }
+   p1{
+    font-weight:700;
+   }
+   .indent{
+    text-indent: 20px;
+   }
+    nav#downmenu ul {
+ list-style: none;
+ background-color: #473f3f;
+ text-align: center;
+ padding: 0;
+ margin: 0;
+ }
+  nav#downmenu li {
+ font-size: 20px;
+ line-height: 20px;
+ height: 28px;
+ display: inline-block;
+ padding: 2px;
+ }
+  nav#downmenu a {
+ text-decoration: none;
+ color: #fff;
+ }
