@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tính số ngày trong tháng</title>
+<script>
+  // Nhập dữ liệu
+  var month = prompt("Nhập tháng (1-12):");
+  var year = prompt("Nhập năm:");
+
+  // Kiểm tra dữ liệu nhập
+  if (
+    month == null || month.trim() === "" || isNaN(month) ||
+    year == null || year.trim() === "" || isNaN(year)
+  ) {
+    document.write("<font color='red'><b> Dữ liệu nhập không hợp lệ!</b></font>");
+  } else {
+    month = parseInt(month);
+    year = parseInt(year);
+    var days;
+
+    // Dùng switch xác định số ngày trong tháng
+    switch (month) {
+      case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        days = 31;
+        break;
+      case 4: case 6: case 9: case 11:
+        days = 30;
+        break;
+      case 2:
+        // Kiểm tra năm nhuận
+        if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0))
+          days = 29;
+        else
+          days = 28;
+        break;
+      default:
+        document.write("<font color='red'><b> Tháng phải nằm trong khoảng 1-12!</b></font>");
+        days = null;
+    }
+
+    // Nếu hợp lệ thì in kết quả
+    if (days != null) {
+      document.write("<h2>Kết quả</h2>");
+      document.write("Tháng: <b>" + month + "</b><br>");
+      document.write("Năm: <b>" + year + "</b><br>");
+      document.write("<font color='blue'><b>Số ngày trong tháng = " + days + "</b></font>");
+    }
+  }
+</script>
+</head>
+<body>
+</body>
+</html>

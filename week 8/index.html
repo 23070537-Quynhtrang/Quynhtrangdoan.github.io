@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tuyển Dụng IT - Phong cách Sổ Tay</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 40px;
+        background: #d2b48c url('https://www.transparenttextures.com/patterns/wood-pattern.png') repeat;
+        font-family: 'Open Sans', sans-serif;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+    }
+
+    .notebook {
+        background: #fefefe;
+        width: 900px;
+        height: 600px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        border-radius: 8px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        font-size: 14px;
+    }
+
+    .binder {
+        width: 30px;
+        background: #333;
+        position: relative;
+        box-shadow:
+            inset 0 0 5px #000,
+            0 0 10px rgba(0,0,0,0.2);
+        z-index: 5;
+    }
+    .binder::before,
+    .binder::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 16px;
+        background: #eee;
+        border-radius: 50%;
+        box-shadow: inset 0 0 4px #bbb;
+    }
+    .binder::before {
+        top: 30px;
+    }
+    .binder::after {
+        top: 80px;
+    }
+
+    .page {
+        flex: 1;
+        padding: 40px 50px 40px 50px;
+        background: #fff;
+        box-shadow: inset 0 0 10px #ddd;
+        overflow-y: auto;
+        position: relative;
+    }
+    .page.left {
+        border-right: 1px solid #ccc;
+        padding-left: 30px;
+    }
+    .page.right {
+        padding-right: 30px;
+        position: relative;
+    }
+
+    .page h2 {
+        font-family: Arial, sans-serif;
+        font-size: 22px;
+        margin-bottom: 25px;
+        color: #222;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: normal;
+    }
+
+    .contact-info {
+        line-height: 1.6;
+    }
+    .contact-info p {
+        margin: 10px 0;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        color: #333;
+    }
+    .contact-info p i {
+        margin-right: 10px;
+        font-style: normal;
+        color: #a0522d;
+        width: 20px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .social-media {
+        margin-top: 20px;
+    }
+    .social-media a {
+        display: inline-block;
+        margin-right: 12px;
+        margin-top: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+    }
+    .social-media a:hover {
+        transform: scale(1.15);
+    }
+    .social-media img {
+        display: block;
+        height: 36px;
+        width: 36px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        margin-top: 15px;
+        font-weight: 600;
+        color: #333;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        margin-top: 6px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: 'Open Sans', sans-serif;
+        resize: vertical;
+        color: #222;
+    }
+    textarea {
+        height: 120px;
+    }
+    button {
+        margin-top: 25px;
+        align-self: flex-end;
+        background: #8b4513;
+        border: none;
+        color: white;
+        padding: 10px 24px;
+        font-weight: 700;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Open Sans', sans-serif;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+        letter-spacing: 1px;
+    }
+    button:hover {
+        background: #a0522d;
+    }
+
+    .page::-webkit-scrollbar {
+        width: 8px;
+    }
+    .page::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+    .page::-webkit-scrollbar-thumb {
+        background: #aaa;
+        border-radius: 4px;
+    }
+</style>
+</head>
+
+<body>
+    <div class="notebook">
+        <div class="binder"></div>
+        <div class="page left">
+            <h2>thông tin liên hệ</h2>
+            <div class="contact-info">
+                <p><i>📍</i> <strong>Địa chỉ:</strong> 123 Đường ABC, Quận XYZ, TP. HN</p>
+                <p><i>✉️</i> <strong>Email:</strong> hr@company.com</p>
+                <p><i>📞</i> <strong>Điện thoại:</strong> 0123-456-789</p>
+                <p><i>🌐</i> <strong>Website:</strong> www.company.com</p>
+            </div>
+            <div class="social-media">
+                <a href="#" title="Facebook" aria-label="Facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook icon" />
+                </a>
+                <a href="#" title="YouTube" aria-label="YouTube">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube icon" />
+                </a>
+                <a href="#" title="Twitter" aria-label="Twitter">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter icon" />
+                </a>
+                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn icon" />
+                </a>
+            </div>
+        </div>
+        <div class="page right">
+            <h2>form liên hệ</h2>
+            <form action="#" method="post" autocomplete="off">
+                <label for="name">Họ và tên</label>
+                <input type="text" id="name" name="name" required placeholder="Nhập họ và tên bạn" />
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Nhập email của bạn" />
+                
+                <label for="subject">Vị trí quan tâm</label>
+                <input type="text" id="subject" name="subject" placeholder="Vị trí tuyển dụng mong muốn" />
+
+                <label for="message">Tin nhắn</label>
+                <textarea id="message" name="message" required placeholder="Mô tả kinh nghiệm và các thông tin cần thiết"></textarea>
+
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
