@@ -82,23 +82,28 @@
     </style>
 
     <script language="javascript">
-        // Hàm FormValid() đã được điều chỉnh để khớp với các trường mới
         function formValid() {
   var f = document.frmRegister;
-  var phone_pattern = /^\(\d{3}\)\d{3}\-\d{4}$|^\d{10}$/;
-  var email_pattern = /^[a-zA-Z]\w*(\.\w+)*\@[a-z]{2,3}(\.[a-z]{2,3})+$/;
-  
+   var phone_regex = /^(03|05|07|08|09)\d{08}$/;
+   var email_regex = /^[a-zA-Z]\w*(\.\w+)*\@[a-z]{2,3}(\.[a-z]{2,3})+$/;
+   var pass = f.txtPassword1.value;
+   var strong_pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/;
   if(f.txtUsername.value==""){
     alert("Username can't be empty");
     f.txtUsername.focus();
     return false;
   }
   
-  if(f.txtPassword1.value.length < 6 || f.txtPassword1.value.length > 20){
-    alert("Password length must be from 6 to 20 characters");
+  if(f.txtPassword1.value.length < 8 || f.txtPassword1.value.length > 20){
+    alert("Password length must be from 8 to 20 characters");
     f.txtPassword1.focus();
     return false;
   }
+  if (!strong_pass.test(f.txtPassword1.value)) {
+  alert("Password must include uppercase, lowercase, number, and special character.");
+  f.txtPassword1.focus();
+  return false;
+}
   
   if(f.txtPassword1.value != f.txtPassword2.value){
     alert("Password doesn't match");
@@ -106,13 +111,12 @@
     return false;
   }
   
-  if(phone_pattern.test(f.txtPhone.value)==false){
-    alert("Invalid phone number");
-    f.txtPhone.focus();
-    return false;
+    if (!phone_regex.test(phone_number)){
+         alert("Invalid phone number.Please enter a valid phone number.");
+return false;
   }
   
-  if(email_pattern.test(f.txtEmail.value)==false){
+  if(!email_regex.test(f.txtEmail.value)==false){
     alert("Invalid email address");
     f.txtEmail.focus();
     return false;
